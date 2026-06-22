@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>購入者特典｜タイプ別完全ガイド</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8F5;--surface:#fff;--surface2:#F4F1ED;
+  --text:#1A1410;--text2:#6B6158;--text3:#A89F96;
+  --border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.16);
+  --purple:#7F77DD;--purple-bg:#EEEDFE;--purple-text:#3C3489;
+  --green:#1D9E75;--green-bg:#E1F5EE;--green-text:#0F6E56;
+  --red:#E24B4A;--red-bg:#FCEBEB;--red-text:#A32D2D;
+  --amber-bg:#FAEEDA;--amber-text:#854F0B;
+}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:4rem}
+
+/* HERO */
+.hero{background:var(--text);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,255,255,0.02) 40px,rgba(255,255,255,0.02) 80px)}
+.hero-eye{font-size:10px;letter-spacing:.15em;color:rgba(255,255,255,.45);margin-bottom:.75rem;text-transform:uppercase;position:relative}
+.hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:600;line-height:1.4;position:relative}
+.hero-sub{font-size:12px;color:rgba(255,255,255,.45);margin-top:.6rem;line-height:1.7;position:relative}
+
+.wrapper{max-width:720px;margin:0 auto;padding:0 1.25rem}
+
+/* MAIN FEATURE TABS */
+.feature-tabs{display:flex;gap:0;margin-top:1.75rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.feature-tab{flex:1;padding:14px 8px;text-align:center;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--text3);border-right:1px solid var(--border);transition:all .15s;line-height:1.4}
+.feature-tab:last-child{border-right:none}
+.feature-tab .tab-icon{font-size:18px;display:block;margin-bottom:4px}
+.feature-tab.active{background:var(--text);color:#fff}
+.feature-tab:not(.active):hover{background:var(--surface2);color:var(--text2)}
+
+/* CATEGORY TABS */
+.section{margin-top:1.5rem}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:.6rem;padding-left:2px}
+.cat-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1rem}
+.cat-tab{padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);transition:all .15s;font-weight:500}
+.cat-tab.active{background:var(--text);color:#fff;border-color:var(--text)}
+.cat-tab:not(.active):hover{color:var(--text);border-color:var(--border2)}
+
+/* TYPE TABS */
+.type-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.type-tab{padding:5px 13px;border-radius:20px;font-size:11.5px;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text2);transition:all .15s}
+.type-tab.active{background:var(--purple-bg);color:var(--purple-text);border-color:#AFA9EC;font-weight:700}
+.type-tab:not(.active):hover{border-color:var(--border2)}
+
+/* CONTENT CARD */
+.content-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.card-header{padding:1.1rem 1.4rem 1rem;border-bottom:1px solid var(--border)}
+.card-type-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 10px;border-radius:20px;background:var(--purple-bg);color:var(--purple-text);margin-bottom:7px;letter-spacing:.04em}
+.card-title{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:600;line-height:1.45;margin-bottom:6px}
+.card-essence{font-size:12px;color:var(--text2);line-height:1.7;padding:9px 12px;background:var(--surface2);border-radius:8px}
+.card-essence strong{color:var(--text);font-weight:700}
+
+.card-body{padding:1rem 1.4rem 1.2rem;display:flex;flex-direction:column;gap:10px}
+
+/* ITEMS */
+.item-block{border-radius:10px;padding:11px 13px}
+.item-block.green{background:var(--green-bg);border-left:3px solid var(--green)}
+.item-block.purple{background:var(--purple-bg);border-left:3px solid var(--purple)}
+.item-block.red{background:var(--red-bg);border-left:3px solid var(--red)}
+.item-block.amber{background:var(--amber-bg);border-left:3px solid #BA7517}
+.item-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.item-block.green .item-label{color:var(--green-text)}
+.item-block.purple .item-label{color:var(--purple-text)}
+.item-block.red .item-label{color:var(--red-text)}
+.item-block.amber .item-label{color:#854F0B}
+
+.item-row{padding:5px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:13px;line-height:1.65}
+.item-row:last-child{border-bottom:none;padding-bottom:0}
+.item-main{display:flex;gap:6px;align-items:flex-start;font-weight:500}
+.item-icon{flex-shrink:0;margin-top:1px}
+.item-reason{font-size:12px;color:var(--text2);margin-top:3px;padding-left:16px;line-height:1.6}
+
+.tip-box{background:var(--surface2);border-radius:9px;padding:10px 13px;font-size:12.5px;color:var(--text2);line-height:1.75}
+.tip-box strong{color:var(--text);font-weight:700}
+
+.footer{margin-top:3.5rem;text-align:center;font-size:11px;color:var(--text3);padding:1.75rem 1.25rem;border-top:1px solid var(--border)}
+
+@media(max-width:480px){
+  .feature-tab{font-size:11px;padding:12px 4px}
+  .feature-tab .tab-icon{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrapper">
+    <div class="hero-eye">Buyer's Special Contents</div>
+    <h1 class="hero-title">タイプ別完全ガイド</h1>
+    <p class="hero-sub">褒め方・頼り方・冷めのサイン＆最初の動き方</p>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="feature-tabs">
+    <div class="feature-tab active" onclick="selectFeature('home', this)">
+      <span class="tab-icon">⭐</span>褒め方
+    </div>
+    <div class="feature-tab" onclick="selectFeature('rely', this)">
+      <span class="tab-icon">🌙</span>頼り方
+    </div>
+    <div class="feature-tab" onclick="selectFeature('cool', this)">
+      <span class="tab-icon">🌟</span>冷めのサイン
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label" id="catLabel">タイプを選ぶ</div>
+    <div class="cat-tabs" id="catTabs"></div>
+    <div class="type-tabs" id="typeTabs"></div>
+    <div class="content-card" id="contentCard"></div>
+  </div>
+</div>
+
+<div class="footer">購入者限定コンテンツ｜無断転載・共有禁止</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const cats = [
+  { id:'busy',   label:'忙しい男性' },
+  { id:'cool',   label:'すぐ冷める男性' },
+  { id:'pride',  label:'プライドが高い男性' },
+  { id:'silent', label:'連絡無精な男性' },
+];
+
+const types = {
+  busy:   [{ id:'busyA', label:'仕事大好きくん'}, {id:'busyB', label:'仕事ストレスくん'}],
+  cool:   [{ id:'coolA', label:'草食系男子'}, {id:'coolB', label:'肉食系男子'}, {id:'coolC', label:'ドキドキ大好きくん'}, {id:'coolD', label:'ナルシスト系モテ男くん'}],
+  pride:  [{ id:'prideA', label:'繊細くん'}, {id:'prideB', label:'感情ジェットコースターくん'}, {id:'prideC', label:'モラハラ系俺さまくん'}],
+  silent: [{ id:'silentA', label:'自由人くん'}, {id:'silentB', label:'趣味大好きくん'}, {id:'silentC', label:'マイペース研究者くん'}],
+};
+
+// ---------- 褒め方 ----------
+const homeData = {
+  busyA:{
+    badge:'忙しい男性', title:'仕事大好きくん',
+    essence:'成長・努力・ビジョンへの言及が刺さる',
+    items:[
+      {phrase:'「その判断、すごいと思う。私には思いつかなかった」', reason:'結果より判断力を褒める。俺の思考を理解してくれたという感覚になる'},
+      {phrase:'「あの時諦めなかったの、かっこよかった」', reason:'プロセスへの言及。見ていてくれたという感覚が刺さる'},
+      {phrase:'「○○くんの話聞いてると、こっちまでワクワクしてくる」', reason:'熱量を肯定される。このタイプが最も欲しい反応'},
+      {phrase:'「その目標、絶対達成できると思う。根拠あって言ってる」', reason:'具体的な根拠付きの応援。漠然とした「頑張って」より遥かに響く'},
+    ]
+  },
+  busyB:{
+    badge:'忙しい男性', title:'仕事ストレスくん',
+    essence:'存在・忍耐・小さな行動への言及が刺さる',
+    items:[
+      {phrase:'「毎日ちゃんと行ってるの、普通にすごいと思う」', reason:'当たり前に見えることへの肯定。このタイプには特に響く'},
+      {phrase:'「愚痴言いながらでも続けてるの、意外と強いよね」', reason:'弱さを認めながら強さを指摘する'},
+      {phrase:'「○○くんって、しんどい時ほど丁寧だよね」', reason:'本人が気づいていない良さを言語化する。最も深く刺さる'},
+    ]
+  },
+  coolA:{
+    badge:'すぐ冷める男性', title:'草食系男子',
+    essence:'存在・安心感・内面への言及が刺さる',
+    items:[
+      {phrase:'「○○くんといると、なんか落ち着く。それが好き」', reason:'存在そのものへの肯定。最高の褒め言葉'},
+      {phrase:'「無理に盛り上げようとしないとこ、好きだよ」', reason:'草食系が最も褒められたいポイントをズバリ言語化'},
+      {phrase:'「○○くんの話し方って、丁寧だよね。ちゃんと考えてから言ってる感じ」', reason:'思慮深さへの言及'},
+    ]
+  },
+  coolB:{
+    badge:'すぐ冷める男性', title:'肉食系男子',
+    essence:'行動力・影響力・他との違いへの言及が刺さる',
+    items:[
+      {phrase:'「○○くんって、他の人と何か違う気がする。なんだろ」', reason:'特別感の演出。答えは言わない、考えさせる'},
+      {phrase:'「その決断、普通の人には無理だよ。行動力がある人にしかできない」', reason:'他との差別化＋行動力への言及'},
+      {phrase:'「また新しいこと始めたの？飽きないね笑。でもそういうエネルギー、羨ましい」', reason:'軽いイジリ＋本気の羨望'},
+    ]
+  },
+  coolC:{
+    badge:'すぐ冷める男性', title:'ドキドキ大好きくん',
+    essence:'感情・共感・唯一性への言及が刺さる',
+    items:[
+      {phrase:'「○○くんみたいに感情豊かな人って、実は少ないと思う」', reason:'欠点に見えることを強みとして言語化する'},
+      {phrase:'「○○くんといると、なんか感情が動く。退屈しない」', reason:'存在への刺激の肯定'},
+    ]
+  },
+  coolD:{
+    badge:'すぐ冷める男性', title:'ナルシスト系モテ男くん',
+    essence:'センス・影響力・美的評価への言及が刺さる。ただし簡単に褒めない',
+    items:[
+      {phrase:'「その服、他の人が着てたら似合わないと思う。○○くんだから成立してる」', reason:'条件付きの褒め。誰でもではなく「あなただから」が刺さる'},
+      {phrase:'「○○くんに褒められると、なんか本当にそうな気がしてくる。不思議」', reason:'相手を褒めながら自分への影響力を伝える'},
+      {phrase:'（たまに）「それは微妙かな。でも○○のところはさすがだと思う」', reason:'否定してから褒める。簡単に褒めない女性への執着が生まれる'},
+    ]
+  },
+  prideA:{
+    badge:'プライドが高い男性', title:'繊細くん',
+    essence:'内面・誠実さ・素の部分への言及が刺さる',
+    items:[
+      {phrase:'「さっき素直に言ってくれたの、嬉しかった。そういうの好きだよ」', reason:'素直さを褒める。最も苦手なことへの肯定が刺さる'},
+      {phrase:'「弱いとこ見せてくれてありがとう。そういうの、大事にしたいと思う」', reason:'弱さを見せた直後に言う。最も必要としている言葉'},
+    ]
+  },
+  prideB:{
+    badge:'プライドが高い男性', title:'感情ジェットコースターくん',
+    essence:'熱量・正直さ・落ち着いた後の行動への言及が刺さる',
+    items:[
+      {phrase:'「感情的になるのって、それだけ本気だからだと思う」', reason:'欠点を強みとして言語化'},
+      {phrase:'「落ち着いた後にちゃんと話せる人って、意外と少ないよ」', reason:'爆発後の誠実さへの言及。このタイミングで言うと最も効く'},
+    ]
+  },
+  prideC:{
+    badge:'プライドが高い男性', title:'モラハラ系俺さまくん',
+    essence:'判断力・先見性への言及が効きやすい。方法②と組み合わせて使う',
+    items:[
+      {phrase:'「その見方、正直私には思いつかなかった。視点が違うと思う」', reason:'思考の優位性への言及'},
+      {phrase:'「○○くんが言ってたこと、後から考えたらやっぱり正しかった」', reason:'後出しの正解認定。最効率の褒め方'},
+    ]
+  },
+  silentA:{
+    badge:'連絡無精な男性', title:'自由人くん',
+    essence:'一緒にいた時間・楽しさへの言及が刺さる',
+    items:[
+      {phrase:'「今日楽しかった。また行こうね」', reason:'シンプルに楽しかったを伝える。これで十分'},
+      {phrase:'「○○くんといると、なんか楽しいんだよな。なんでだろ」', reason:'理由を言わない楽しさの表明。重くない'},
+    ]
+  },
+  silentB:{
+    badge:'連絡無精な男性', title:'趣味大好きくん',
+    essence:'趣味への理解・熱量への共感が刺さる',
+    items:[
+      {phrase:'「そこまで好きになれるもの、あるって羨ましい」', reason:'趣味への熱量そのものへの肯定'},
+      {phrase:'「○○くんが話す時、なんか楽しそうで見てて好きだよ」', reason:'趣味の話をしている時の表情への言及'},
+    ]
+  },
+  silentC:{
+    badge:'連絡無精な男性', title:'マイペース研究者くん',
+    essence:'論理・精度・思考プロセスへの言及が刺さる',
+    items:[
+      {phrase:'「なんでそう思ったの？聞いてみたら、やっぱりちゃんと理由があった」', reason:'思考プロセスへの興味の表明'},
+      {phrase:'「○○くんの説明、わかりやすい。話の組み立て方が違う気がする」', reason:'論理的な伝え方への評価'},
+      {phrase:'「この間言ってたこと、後から調べたら本当にそうだった」', reason:'正確さへの言及。最も喜ぶフィードバック'},
+    ]
+  },
+};
+
+// ---------- 頼り方 ----------
+const relyData = {
+  busyA:{
+    badge:'忙しい男性', title:'仕事大好きくん',
+    essence:'仕事・キャリア・目標に関すること。このタイプが最も価値を感じる領域',
+    items:[
+      {phrase:'「○○の仕事って、どういうスキルが必要なの？話聞いてみたくて」', reason:''},
+      {phrase:'「こういう状況で、どう動くのが正解だと思う？○○くんの視点で聞きたい」', reason:''},
+    ],
+    tip:'「教えてほしい」より「○○くんの経験・視点が聞きたい」という言い方にする'
+  },
+  busyB:{
+    badge:'忙しい男性', title:'仕事ストレスくん',
+    essence:'日常の小さなこと・体を使うこと。重い相談より「ちょっとしたお願い」が喜ばれる',
+    items:[
+      {phrase:'「重いもの持ってもらえる？力仕事系、○○くんに頼みたくて」', reason:''},
+      {phrase:'「ちょっと話聞いてほしいだけで、解決策とかいらないんだけど」', reason:''},
+    ],
+    tip:'「解決しなくていい・聞いてくれるだけでいい」という一言を添える'
+  },
+  coolA:{
+    badge:'すぐ冷める男性', title:'草食系男子',
+    essence:'感情・判断・関係性に関すること',
+    items:[
+      {phrase:'「友達とこういうことがあって、私の対応どう思う？正直に言ってほしい」', reason:''},
+      {phrase:'「これ、どっちがいいと思う？○○くんの感覚で教えて」', reason:''},
+    ],
+    tip:'答えを求めすぎない。「あなたの感覚を聞きたい」という余白を残す'
+  },
+  coolB:{
+    badge:'すぐ冷める男性', title:'肉食系男子',
+    essence:'行動・決断・リード系のこと',
+    items:[
+      {phrase:'「今日どこ行くか決めてほしい。○○くんが選ぶとこなら絶対いいから」', reason:''},
+      {phrase:'「こういう状況、どう動く？私には決断できなくて」', reason:''},
+    ],
+    tip:'「あなたにリードしてほしい」という雰囲気を出す'
+  },
+  coolC:{
+    badge:'すぐ冷める男性', title:'ドキドキ大好きくん',
+    essence:'楽しさに直結すること',
+    items:[
+      {phrase:'「おすすめのお店教えてほしい。○○くんが知ってそうで」', reason:''},
+      {phrase:'「今週末暇なんだけど、どこか連れてってほしい」', reason:''},
+    ],
+    tip:'楽しい展開につながる頼み方にする'
+  },
+  coolD:{
+    badge:'すぐ冷める男性', title:'ナルシスト系モテ男くん',
+    essence:'センス・見た目・人への印象に関すること',
+    items:[
+      {phrase:'「これ着ていく予定なんだけど、どう思う？○○くんのセンスが好きだから聞きたい」', reason:''},
+    ],
+    tip:'「あなたのセンス・判断力を信頼している」という前置きを入れる。毎回頼むと安くなるので特別な場面だけに絞る'
+  },
+  prideA:{
+    badge:'プライドが高い男性', title:'繊細くん',
+    essence:'守る・助ける系のこと',
+    items:[
+      {phrase:'「一人だと不安なとこがあって、一緒に来てもらえる？」', reason:''},
+      {phrase:'「うまくいかなかった時に、そばにいてくれるだけでいい？」', reason:''},
+    ],
+    tip:'「あなたがいると安心できる」という言い方が最も響く。能力より存在を頼る'
+  },
+  prideB:{
+    badge:'プライドが高い男性', title:'感情ジェットコースターくん',
+    essence:'行動・決断・フィジカル系のこと',
+    items:[
+      {phrase:'「○○が壊れちゃって、直せる？○○くんなら絶対できると思って」', reason:''},
+      {phrase:'「急いでて頭が回らない。どうしたらいいと思う？すぐ決めたい」', reason:''},
+    ],
+    tip:'テンポよく頼む。グダグダした相談より「今すぐ動ける頼られ方」が好き'
+  },
+  prideC:{
+    badge:'プライドが高い男性', title:'モラハラ系俺さまくん',
+    essence:'判断・知識・管理系のこと',
+    items:[
+      {phrase:'「こういうの、私には判断できなくて。どうするのが正解だと思う？」', reason:''},
+    ],
+    tip:'自分の判断を一度下げてから頼む。毎回やると立場が完全に下になるので方法②と組み合わせて使う'
+  },
+  silentA:{
+    badge:'連絡無精な男性', title:'自由人くん',
+    essence:'楽しさに直結すること',
+    items:[
+      {phrase:'「おすすめのお店教えてほしい。○○くんが知ってそうで」', reason:''},
+      {phrase:'「今週末暇なんだけど、どこか連れてってほしい」', reason:''},
+    ],
+    tip:'楽しい展開につながる頼み方にする'
+  },
+  silentB:{
+    badge:'連絡無精な男性', title:'趣味大好きくん',
+    essence:'趣味に関連すること',
+    items:[
+      {phrase:'「○○（趣味）のこと、全然わからなくて。基本から教えてほしい」', reason:''},
+      {phrase:'「○○くんのおすすめ教えて。信頼してるから」', reason:''},
+    ],
+    tip:'趣味の話になると饒舌になるタイプなので「教えてほしい」という姿勢で入ると自然に会話が弾む'
+  },
+  silentC:{
+    badge:'連絡無精な男性', title:'マイペース研究者くん',
+    essence:'論理・分析・仕組みに関すること',
+    items:[
+      {phrase:'「この契約書の内容、意味がよくわからなくて。○○くんに見てほしい」', reason:''},
+      {phrase:'「家電買い替えたいんだけど、何を基準に選んだらいい？」', reason:''},
+    ],
+    tip:'感情的な頼り方より「あなたの知識・分析力を借りたい」という論理的な頼り方が響く'
+  },
+};
+
+// ---------- 冷めのサイン ----------
+const coolData = {
+  busyA:{
+    badge:'忙しい男性', title:'仕事大好きくん',
+    signs:['仕事の話をしなくなった','将来の話が出なくなった','デートの誘いが減った'],
+    action:'彼の仕事に関連した話題で自然に接触する。「この間言ってた○○、どうなった？」という一言で覚えていてくれたという感覚を作る'
+  },
+  busyB:{
+    badge:'忙しい男性', title:'仕事ストレスくん',
+    signs:['連絡がさらに減った','会った時に覇気がない','趣味に集中している'],
+    action:'何も求めない接触をする。「最近どう？なんとなく気になって」という短いLINEで重くなく存在感を示す。このタイミングで会おうとしない'
+  },
+  coolA:{
+    badge:'すぐ冷める男性', title:'草食系男子',
+    signs:['返信が短くなった','会う頻度が下がった','話題が減った'],
+    action:'関係に言及しない。少し間を置いてから「最近どんな感じ？」と軽く連絡する。急かされることへの抵抗が強いので自然な間合いを保つ'
+  },
+  coolB:{
+    badge:'すぐ冷める男性', title:'肉食系男子',
+    signs:['デートへの熱量が下がった','新しい提案をしなくなった'],
+    action:'新鮮な刺激を自分から作る。「今度こういうとこ行きたいんだけど、一緒に行かない？」と女性から提案する。受け身の関係に飽きているサインなので女性が動くことで状況が変わりやすい'
+  },
+  coolC:{
+    badge:'すぐ冷める男性', title:'ドキドキ大好きくん',
+    signs:['他の女性の話が増えた','テンションが下がった'],
+    action:'他の男性の影をほのかに見せる。「最近なんか楽しいことあって」という充実した雰囲気を出す。このタイプは危機感への反応が早い'
+  },
+  coolD:{
+    badge:'すぐ冷める男性', title:'ナルシスト系モテ男くん',
+    signs:['褒め返しが減った','自分の話をしなくなった'],
+    action:'褒めるのを一時的に止める。反応を薄くする。「あれ、最近なんか違う？」と感じさせることで関心が戻りやすい'
+  },
+  prideA:{
+    badge:'プライドが高い男性', title:'繊細くん',
+    signs:['黙る時間が増えた','不機嫌が長くなった'],
+    action:'責めずに普通に接する。「なんか元気ないな、大丈夫？」と一言だけ言って、答えを求めない。このタイプは「責められていない」と感じると自分から話し始めることが多い'
+  },
+  prideB:{
+    badge:'プライドが高い男性', title:'感情ジェットコースターくん',
+    signs:['感情の爆発が増えた','謝らなくなった'],
+    action:'嵐が過ぎた後に落ち着いたタイミングで「最近なんかしんどいことある？」と聞く。外部ストレスが原因のことが多いので関係の問題より彼の状態を心配することが先'
+  },
+  prideC:{
+    badge:'プライドが高い男性', title:'モラハラ系俺さまくん',
+    signs:['コントロール行動が増した','批判の頻度が上がった'],
+    action:'反応を薄くする。感情的に反応しない。反応を減らすことで相手の行動を変えることを目指す'
+  },
+  silentA:{
+    badge:'連絡無精な男性', title:'自由人くん',
+    signs:['誘いへの反応が遅くなった','デートの提案がなくなった'],
+    action:'楽しいイベントや場所の情報を送る。「こういうとこ行きたいんだけど、一緒に行く？」という軽い誘いで関心を引き戻す'
+  },
+  silentB:{
+    badge:'連絡無精な男性', title:'趣味大好きくん',
+    signs:['趣味の話をしなくなった','連絡の頻度がさらに落ちた'],
+    action:'趣味の近況を聞く。「最近○○どう？」という一言で最も話しやすいトピックから関係を温め直す'
+  },
+  silentC:{
+    badge:'連絡無精な男性', title:'マイペース研究者くん',
+    signs:['会っている時の会話が減った','目が合わなくなった'],
+    action:'何かを「教えてほしい」と頼む。役に立てることへの反応が大きいので知識・分析系の相談から関係を温め直す'
+  },
+};
+
+// ============================================================
+// STATE & RENDER
+// ============================================================
+let currentFeature = 'home';
+let currentCat = 'busy';
+let currentType = 'busyA';
+
+function selectFeature(f, el) {
+  currentFeature = f;
+  document.querySelectorAll('.feature-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  currentCat = cats[0].id;
+  currentType = types[cats[0].id][0].id;
+  renderCats();
+  renderTypes();
+  renderContent();
+}
+
+function selectCat(cid, el) {
+  currentCat = cid;
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  currentType = types[cid][0].id;
+  renderTypes();
+  renderContent();
+}
+
+function selectType(tid, el) {
+  currentType = tid;
+  document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderContent();
+}
+
+function renderCats() {
+  document.getElementById('catTabs').innerHTML = cats.map((c,i) =>
+    `<div class="cat-tab${c.id===currentCat?' active':''}" onclick="selectCat('${c.id}',this)">${c.label}</div>`
+  ).join('');
+}
+
+function renderTypes() {
+  document.getElementById('typeTabs').innerHTML = types[currentCat].map(t =>
+    `<div class="type-tab${t.id===currentType?' active':''}" onclick="selectType('${t.id}',this)">${t.label}</div>`
+  ).join('');
+}
+
+function renderContent() {
+  const card = document.getElementById('contentCard');
+  if (currentFeature === 'home') renderHome(card);
+  else if (currentFeature === 'rely') renderRely(card);
+  else renderCool(card);
+}
+
+function renderHome(card) {
+  const d = homeData[currentType];
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-type-badge">${d.badge}</div>
+      <div class="card-title">${d.title}</div>
+      <div class="card-essence">本質：<strong>${d.essence}</strong></div>
+    </div>
+    <div class="card-body">
+      <div class="item-block green">
+        <div class="item-label">効果的な褒め言葉 ＆ 理由</div>
+        ${d.items.map(item=>`
+          <div class="item-row">
+            <div class="item-main"><span class="item-icon" style="color:var(--green)">✦</span>${item.phrase}</div>
+            ${item.reason ? `<div class="item-reason">→ ${item.reason}</div>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderRely(card) {
+  const d = relyData[currentType];
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-type-badge">${d.badge}</div>
+      <div class="card-title">${d.title}</div>
+      <div class="card-essence">頼むべき内容：<strong>${d.essence}</strong></div>
+    </div>
+    <div class="card-body">
+      <div class="item-block purple">
+        <div class="item-label">頼り方の例</div>
+        ${d.items.map(item=>`
+          <div class="item-row">
+            <div class="item-main"><span class="item-icon" style="color:var(--purple)">✦</span>${item.phrase}</div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="tip-box">💡 <strong>頼み方のコツ：</strong>${d.tip}</div>
+    </div>
+  `;
+}
+
+function renderCool(card) {
+  const d = coolData[currentType];
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-type-badge">${d.badge}</div>
+      <div class="card-title">${d.title}</div>
+    </div>
+    <div class="card-body">
+      <div class="item-block red">
+        <div class="item-label">冷めのサイン</div>
+        ${d.signs.map(s=>`
+          <div class="item-row">
+            <div class="item-main"><span class="item-icon" style="color:var(--red)">⚠</span>${s}</div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="item-block amber">
+        <div class="item-label">最初にやること</div>
+        <div style="font-size:13px;line-height:1.8;color:var(--text)">${d.action}</div>
+      </div>
+    </div>
+  `;
+}
+
+// INIT
+renderCats();
+renderTypes();
+renderContent();
+</script>
+</body>
+</html>
